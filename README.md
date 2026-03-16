@@ -1,4 +1,8 @@
 
+# [NOTEWORTHY PLANETS](https://studio.code.org/projects/applab/wf2cKsIWLvcOiZOZt6GzbX3Iy22Bg2K4ek3GHseQ08A)
+
+This is a program I created as a side project in my Computer Science Principles class Freshman year. Noteworthy Planets is an app made to share planets and their data from the game "No Man's Sky", players can view all planets posted by other users, search through planets based on resources, and upload their own planets for others to find.
+
 # README for 1 NMS Noteworthy Planets #
 
 This is the README file for the 1 NMS Noteworthy Planets app. It's a great place to write
@@ -27,7 +31,3 @@ The files in this folder contain everything you need to run the app:
   that you uploaded in applab.
   
 * `tables` - This is a directory with all the data tables
-
-# NOTEWORTHY PLANETS
-
-This is a program I created as a side project in my Computer Science Principles class Freshman year. Noteworthy Planets is an app made to share planets and their data from the game "No Man's Sky", players can view all planets posted by other users, search through planets based on resources, and upload their own planets for others to find.
