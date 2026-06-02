@@ -2,7 +2,7 @@
 var Glyphs = ["assets/PORTALSYMBOL.0.png", "assets/PORTALSYMBOL.1.png", "assets/PORTALSYMBOL.2.png", "assets/PORTALSYMBOL.3.png", "assets/PORTALSYMBOL.4.png", "assets/PORTALSYMBOL.5.png", "assets/PORTALSYMBOL.6.png", "assets/PORTALSYMBOL.7.png", "assets/PORTALSYMBOL.8.png", "assets/PORTALSYMBOL.9.png", "assets/PORTALSYMBOL.A.png", "assets/PORTALSYMBOL.B.png", "assets/PORTALSYMBOL.C.png", "assets/PORTALSYMBOL.D.png", "assets/PORTALSYMBOL.E.png", "assets/PORTALSYMBOL.F.png"];
 setImageURL("LoadingGlyph1", Glyphs[(randomNumber(0, 15))]);
 setImageURL("LoadingGlyph2", Glyphs[(randomNumber(0, 15))]);
-var Music = [	"assets/NMS_MUSIC1.mp3", 	"assets/NMS_MUSIC2.mp3", "assets/NMS_MUSIC3.mp3", "assets/NMS_MUSIC4.mp3", "assets/NMS_MUSIC5.mp3", "assets/NMS_MUSIC6.mp3", "assets/NMS_MUSIC7.mp3"];
+var Music = ["assets/NMS_MUSIC1.mp3", "assets/NMS_MUSIC2.mp3", "assets/NMS_MUSIC3.mp3", "assets/NMS_MUSIC4.mp3", "assets/NMS_MUSIC5.mp3", "assets/NMS_MUSIC6.mp3", "assets/NMS_MUSIC7.mp3"];
 
 var AppHelpImages = ["assets/0TUT.jpg", "assets/1TUT.jpg", "assets/2TUT.jpg", "assets/3TUT.jpg", "assets/4TUT.jpg", "assets/5TUT.jpg"];
 var GlyphIDS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
@@ -63,7 +63,7 @@ var inputGlyph11 = 0;
 var inputGlyph12 = 0;
 var i = 0;
 //Grabs all info from Planet submitter screen and adds a new row to the Main data table
-onEvent("planetUploadButton", "click", function( ) {
+onEvent("planetUploadButton", "click", function () {
   PlanetUploaders = getColumn("PlanetUploaders", "Uploader");
   Planets = getColumn("PlanetUploaders", "Planets");
   if (getText("factsInput") == "" || getText("factsInput") == " ") {
@@ -72,39 +72,39 @@ onEvent("planetUploadButton", "click", function( ) {
   if (("" == getText("planetNameInput")) || ("" == getText("imageInput") || ("" == getText("discovererInput") || ("" == getText("starSystemNameInput"))))) {
     postStatus = 0;
   } else if ((getText("planetTypeInput") == " ")) {
-    createRecord("NMS_Planets", {Name:(getText("planetNameInput")), Galaxy:(getText("galaxyInput")), Description:(getText("planetDescriptionInput")), Type:false, Lifeform:(getText("lifeformInput")), Economy:(getText("economyInput")), Resource1:(getText("resource1Input")), Resource2:(getText("resource2Input")), Resource3:(getText("resource3Input")), Facts:(getText("factsInput")), Image:(getText("imageInput")), Glyph1:(getImageURL("GlyphInput1")), Glyph2:(getImageURL("GlyphInput2")), Glyph3:(getImageURL("GlyphInput3")), Glyph4:(getImageURL("GlyphInput4")), Glyph5:(getImageURL("GlyphInput5")), Glyph6:(getImageURL("GlyphInput6")), Glyph7:(getImageURL("GlyphInput7")), Glyph8:(getImageURL("GlyphInput8")), Glyph9:(getImageURL("GlyphInput9")), Glyph10:(getImageURL("GlyphInput10")), Glyph11:(getImageURL("GlyphInput11")), Glyph12:(getImageURL("GlyphInput12")), Discoverer:(getText("discovererInput")), ProtectionType:(getImageURL("protTypeInput")), StarSystem:(getText("starSystemNameInput")), Sentinel:(getText("sentinelInput")), All:"All"}, function(record) {
+    createRecord("NMS_Planets", { Name: (getText("planetNameInput")), Galaxy: (getText("galaxyInput")), Description: (getText("planetDescriptionInput")), Type: false, Lifeform: (getText("lifeformInput")), Economy: (getText("economyInput")), Resource1: (getText("resource1Input")), Resource2: (getText("resource2Input")), Resource3: (getText("resource3Input")), Facts: (getText("factsInput")), Image: (getText("imageInput")), Glyph1: (getImageURL("GlyphInput1")), Glyph2: (getImageURL("GlyphInput2")), Glyph3: (getImageURL("GlyphInput3")), Glyph4: (getImageURL("GlyphInput4")), Glyph5: (getImageURL("GlyphInput5")), Glyph6: (getImageURL("GlyphInput6")), Glyph7: (getImageURL("GlyphInput7")), Glyph8: (getImageURL("GlyphInput8")), Glyph9: (getImageURL("GlyphInput9")), Glyph10: (getImageURL("GlyphInput10")), Glyph11: (getImageURL("GlyphInput11")), Glyph12: (getImageURL("GlyphInput12")), Discoverer: (getText("discovererInput")), ProtectionType: (getImageURL("protTypeInput")), StarSystem: (getText("starSystemNameInput")), Sentinel: (getText("sentinelInput")), All: "All" }, function (record) {
       console.log("New Planet Added!");
     });
     postStatus = 1;
   } else {
-    createRecord("NMS_Planets", {Name:(getText("planetNameInput")), Galaxy:(getText("galaxyInput")), Description:(getText("planetDescriptionInput")), Type:(getText("planetTypeInput")), Lifeform:(getText("lifeformInput")), Economy:(getText("economyInput")), Resource1:(getText("resource1Input")), Resource2:(getText("resource2Input")), Resource3:(getText("resource3Input")), Facts:(getText("factsInput")), Image:(getText("imageInput")), Glyph1:(getImageURL("GlyphInput1")), Glyph2:(getImageURL("GlyphInput2")), Glyph3:(getImageURL("GlyphInput3")), Glyph4:(getImageURL("GlyphInput4")), Glyph5:(getImageURL("GlyphInput5")), Glyph6:(getImageURL("GlyphInput6")), Glyph7:(getImageURL("GlyphInput7")), Glyph8:(getImageURL("GlyphInput8")), Glyph9:(getImageURL("GlyphInput9")), Glyph10:(getImageURL("GlyphInput10")), Glyph11:(getImageURL("GlyphInput11")), Glyph12:(getImageURL("GlyphInput12")), Discoverer:(getText("discovererInput")), ProtectionType:(getImageURL("protTypeInput")), StarSystem:(getText("starSystemNameInput")), Sentinel:(getText("sentinelInput")), All:"All"}, function(record) {
+    createRecord("NMS_Planets", { Name: (getText("planetNameInput")), Galaxy: (getText("galaxyInput")), Description: (getText("planetDescriptionInput")), Type: (getText("planetTypeInput")), Lifeform: (getText("lifeformInput")), Economy: (getText("economyInput")), Resource1: (getText("resource1Input")), Resource2: (getText("resource2Input")), Resource3: (getText("resource3Input")), Facts: (getText("factsInput")), Image: (getText("imageInput")), Glyph1: (getImageURL("GlyphInput1")), Glyph2: (getImageURL("GlyphInput2")), Glyph3: (getImageURL("GlyphInput3")), Glyph4: (getImageURL("GlyphInput4")), Glyph5: (getImageURL("GlyphInput5")), Glyph6: (getImageURL("GlyphInput6")), Glyph7: (getImageURL("GlyphInput7")), Glyph8: (getImageURL("GlyphInput8")), Glyph9: (getImageURL("GlyphInput9")), Glyph10: (getImageURL("GlyphInput10")), Glyph11: (getImageURL("GlyphInput11")), Glyph12: (getImageURL("GlyphInput12")), Discoverer: (getText("discovererInput")), ProtectionType: (getImageURL("protTypeInput")), StarSystem: (getText("starSystemNameInput")), Sentinel: (getText("sentinelInput")), All: "All" }, function (record) {
       console.log("New Planet Added!");
     });
     postStatus = 1;
   }
   declareLists();
   if (postStatus == 0) {
-    setProperty("planetUploadButton", "background-color", rgb(245,0,0));
-    setTimeout(function() {
-      setProperty("planetUploadButton", "background-color", rgb(0,0,0));
+    setProperty("planetUploadButton", "background-color", rgb(245, 0, 0));
+    setTimeout(function () {
+      setProperty("planetUploadButton", "background-color", rgb(0, 0, 0));
     }, 1250);
   } else if (postStatus == 1) {
     for (i = 0; i < PlanetUploaders.length - 1; i++) {
       if (PlanetUploaders[i] == getText("discovererInput")) {
-        updateRecord("PlanetUploaders", {id:i + 1, Uploader:(getText("discovererInput")), Planets:(Planets[i] + 1)}, function(record, success) {
-          
+        updateRecord("PlanetUploaders", { id: i + 1, Uploader: (getText("discovererInput")), Planets: (Planets[i] + 1) }, function (record, success) {
+
         });
         uploaderPostStatus = 0;
       }
     }
     if (uploaderPostStatus == 1) {
-      createRecord("PlanetUploaders", {Uploader:(getText("discovererInput")), Planets:1}, function(record) {
-        
+      createRecord("PlanetUploaders", { Uploader: (getText("discovererInput")), Planets: 1 }, function (record) {
+
       });
     }
     uploaderPostStatus = 1;
     for (i = 1; i < 12; i++) {
-      setImageURL("GlyphInput"+i, "assets/PORTALSYMBOL.0.png");
+      setImageURL("GlyphInput" + i, "assets/PORTALSYMBOL.0.png");
     }
     setText("planetNameInput", "");
     setText("imageInput", "");
@@ -124,13 +124,13 @@ onEvent("planetUploadButton", "click", function( ) {
     inputGlyph11 = 0;
     inputGlyph12 = 0;
     setProperty("planetUploadButton", "background-color", "green");
-    setTimeout(function() {
-      setProperty("planetUploadButton", "background-color", rgb(0,0,0));
+    setTimeout(function () {
+      setProperty("planetUploadButton", "background-color", rgb(0, 0, 0));
     }, 1250);
   }
 });
 //Music control
-onEvent("musicButton", "click", function( ) {
+onEvent("musicButton", "click", function () {
   if (musicStatus == "On") {
     setImageURL("musicButton", "icon://fa-volume-off");
     stopSound();
@@ -148,19 +148,19 @@ onEvent("musicButton", "click", function( ) {
     musicStatus = "On";
     setText("musicNumberDisp", musicPlaying + 1);
     setProperty("musicNumberDisp", "hidden", false);
-    setTimeout(function() {
+    setTimeout(function () {
       setProperty("musicNumberDisp", "hidden", true);
     }, 2000);
   }
 });
 //Planet submitter image upload and preview
-onEvent("imageInput", "keypress", function( ) {
+onEvent("imageInput", "keypress", function () {
   setImageURL("imageInputPreview", getText("imageInput"));
 });
-onEvent("imageInputPreview", "click", function( ) {
+onEvent("imageInputPreview", "click", function () {
   setImageURL("imageInputPreview", getText("imageInput"));
 });
-onEvent("sentinelHelpSwapButton", "click", function( ) {
+onEvent("sentinelHelpSwapButton", "click", function () {
   if (sentinelImageStatus == 0) {
     setImageURL("sentinelHelpImage", "assets/Annotation-2023-04-14-073652.jpg");
     sentinelImageStatus = 1;
@@ -170,41 +170,41 @@ onEvent("sentinelHelpSwapButton", "click", function( ) {
   }
 });
 //All screen change buttons
-onEvent("sentinelHelp", "click", function( ) {
+onEvent("sentinelHelp", "click", function () {
   setScreen("SentinelInputHelpScreen");
 });
-onEvent("sentinelHelpBackButton", "click", function( ) {
+onEvent("sentinelHelpBackButton", "click", function () {
   setScreen("PlanetInputter");
 });
-onEvent("planetInputterBackButton", "click", function( ) {
+onEvent("planetInputterBackButton", "click", function () {
   setScreen("HomeScreen");
 });
-onEvent("infoScreenButton", "click", function( ) {
+onEvent("infoScreenButton", "click", function () {
   setScreen("PlanetInfo");
 });
-onEvent("viewerBackButton", "click", function( ) {
+onEvent("viewerBackButton", "click", function () {
   setScreen("HomeScreen");
 });
-onEvent("planetSubmitScreenButton", "click", function( ) {
+onEvent("planetSubmitScreenButton", "click", function () {
   setScreen("PlanetInputter");
 });
-onEvent("planetViewScreenButton", "click", function( ) {
+onEvent("planetViewScreenButton", "click", function () {
   setScreen("PlanetViewer");
 });
-onEvent("infoBackButton", "click", function( ) {
+onEvent("infoBackButton", "click", function () {
   setScreen("PlanetViewer");
 });
-onEvent("searchScreenBackButton", "click", function( ) {
+onEvent("searchScreenBackButton", "click", function () {
   setScreen("PlanetViewer");
 });
-onEvent("searchScreenButton", "click", function( ) {
+onEvent("searchScreenButton", "click", function () {
   setScreen("SearchScreen");
 });
-onEvent("searchScreenButton2", "click", function( ) {
+onEvent("searchScreenButton2", "click", function () {
   setScreen("SearchScreen");
 });
 //Planet submitter hazard changing code
-onEvent("protTypeInput", "click", function( ) {
+onEvent("protTypeInput", "click", function () {
   if (protTypeInput < ProtectionTypes.length - 1) {
     protTypeInput = protTypeInput + 1;
   } else {
@@ -213,7 +213,7 @@ onEvent("protTypeInput", "click", function( ) {
   setImageURL("protTypeInput", ProtectionTypes[protTypeInput]);
 });
 //Planet submitter glyph changing code
-onEvent("GlyphInput1", "click", function( ) {
+onEvent("GlyphInput1", "click", function () {
   if (inputGlyph1 < Glyphs.length - 1) {
     inputGlyph1 = inputGlyph1 + 1;
   } else {
@@ -221,7 +221,7 @@ onEvent("GlyphInput1", "click", function( ) {
   }
   setImageURL("GlyphInput1", Glyphs[inputGlyph1]);
 });
-onEvent("GlyphInput2", "click", function( ) {
+onEvent("GlyphInput2", "click", function () {
   if (inputGlyph2 < Glyphs.length - 1) {
     inputGlyph2 = inputGlyph2 + 1;
   } else {
@@ -229,7 +229,7 @@ onEvent("GlyphInput2", "click", function( ) {
   }
   setImageURL("GlyphInput2", Glyphs[inputGlyph2]);
 });
-onEvent("GlyphInput3", "click", function( ) {
+onEvent("GlyphInput3", "click", function () {
   if (inputGlyph3 < Glyphs.length - 1) {
     inputGlyph3 = inputGlyph3 + 1;
   } else {
@@ -237,7 +237,7 @@ onEvent("GlyphInput3", "click", function( ) {
   }
   setImageURL("GlyphInput3", Glyphs[inputGlyph3]);
 });
-onEvent("GlyphInput4", "click", function( ) {
+onEvent("GlyphInput4", "click", function () {
   if (inputGlyph4 < Glyphs.length - 1) {
     inputGlyph4 = inputGlyph4 + 1;
   } else {
@@ -245,7 +245,7 @@ onEvent("GlyphInput4", "click", function( ) {
   }
   setImageURL("GlyphInput4", Glyphs[inputGlyph4]);
 });
-onEvent("GlyphInput5", "click", function( ) {
+onEvent("GlyphInput5", "click", function () {
   if (inputGlyph5 < Glyphs.length - 1) {
     inputGlyph5 = inputGlyph5 + 1;
   } else {
@@ -253,7 +253,7 @@ onEvent("GlyphInput5", "click", function( ) {
   }
   setImageURL("GlyphInput5", Glyphs[inputGlyph5]);
 });
-onEvent("GlyphInput6", "click", function( ) {
+onEvent("GlyphInput6", "click", function () {
   if (inputGlyph6 < Glyphs.length - 1) {
     inputGlyph6 = inputGlyph6 + 1;
   } else {
@@ -261,7 +261,7 @@ onEvent("GlyphInput6", "click", function( ) {
   }
   setImageURL("GlyphInput6", Glyphs[inputGlyph6]);
 });
-onEvent("GlyphInput7", "click", function( ) {
+onEvent("GlyphInput7", "click", function () {
   if (inputGlyph7 < Glyphs.length - 1) {
     inputGlyph7 = inputGlyph7 + 1;
   } else {
@@ -269,7 +269,7 @@ onEvent("GlyphInput7", "click", function( ) {
   }
   setImageURL("GlyphInput7", Glyphs[inputGlyph7]);
 });
-onEvent("GlyphInput8", "click", function( ) {
+onEvent("GlyphInput8", "click", function () {
   if (inputGlyph8 < Glyphs.length - 1) {
     inputGlyph8 = inputGlyph8 + 1;
   } else {
@@ -277,7 +277,7 @@ onEvent("GlyphInput8", "click", function( ) {
   }
   setImageURL("GlyphInput8", Glyphs[inputGlyph8]);
 });
-onEvent("GlyphInput9", "click", function( ) {
+onEvent("GlyphInput9", "click", function () {
   if (inputGlyph9 < Glyphs.length - 1) {
     inputGlyph9 = inputGlyph9 + 1;
   } else {
@@ -285,7 +285,7 @@ onEvent("GlyphInput9", "click", function( ) {
   }
   setImageURL("GlyphInput9", Glyphs[inputGlyph9]);
 });
-onEvent("GlyphInput10", "click", function( ) {
+onEvent("GlyphInput10", "click", function () {
   if (inputGlyph10 < Glyphs.length - 1) {
     inputGlyph10 = inputGlyph10 + 1;
   } else {
@@ -293,7 +293,7 @@ onEvent("GlyphInput10", "click", function( ) {
   }
   setImageURL("GlyphInput10", Glyphs[inputGlyph10]);
 });
-onEvent("GlyphInput11", "click", function( ) {
+onEvent("GlyphInput11", "click", function () {
   if (inputGlyph11 < Glyphs.length - 1) {
     inputGlyph11 = inputGlyph11 + 1;
   } else {
@@ -301,7 +301,7 @@ onEvent("GlyphInput11", "click", function( ) {
   }
   setImageURL("GlyphInput11", Glyphs[inputGlyph11]);
 });
-onEvent("GlyphInput12", "click", function( ) {
+onEvent("GlyphInput12", "click", function () {
   if (inputGlyph12 < Glyphs.length - 1) {
     inputGlyph12 = inputGlyph12 + 1;
   } else {
@@ -310,7 +310,7 @@ onEvent("GlyphInput12", "click", function( ) {
   setImageURL("GlyphInput12", Glyphs[inputGlyph12]);
 });
 //Updates planet viewer, searcher, and info screen
-onEvent("newPlanetSearchButton", "click", function( ) {
+onEvent("newPlanetSearchButton", "click", function () {
   var begginingPlanetCount = allList.length;
   declareLists();
   currentPlanet = 0;
@@ -323,21 +323,21 @@ onEvent("newPlanetSearchButton", "click", function( ) {
     setText("newPlanetSearchOutput", (finalPlanetCount - begginingPlanetCount) + " New Planets");
   }
   setProperty("newPlanetSearchOutput", "hidden", false);
-  setTimeout(function() {
+  setTimeout(function () {
     setProperty("newPlanetSearchOutput", "text", allList.length + " Total Planets");
-    setTimeout(function() {
+    setTimeout(function () {
       setProperty("newPlanetSearchOutput", "hidden", true);
     }, 1500);
   }, 1500);
 });
 function updateViewer(viewingPlanet) {
   setText("selectedPlanet", (viewingPlanet + 1) + "/" + (nameList.length));
-  if (descriptionList[viewingPlanet] ==(((((( "Deathly Green Anomaly" || "Harsh Blue Globe") || "Imminent Core Detonation") || "Planetary Anomaly") || "Stellar Corruption Detected") || "Terraforming Catastrophe") || "Vermillion Globe") || (typeList[viewingPlanet] == false)) {
+  if (descriptionList[viewingPlanet] == (((((("Deathly Green Anomaly" || "Harsh Blue Globe") || "Imminent Core Detonation") || "Planetary Anomaly") || "Stellar Corruption Detected") || "Terraforming Catastrophe") || "Vermillion Globe") || (typeList[viewingPlanet] == false)) {
     setText("planetDescription", (descriptionList[viewingPlanet]));
   } else if (descriptionList[viewingPlanet] == "Of Light") {
-    setText("planetDescription", ((typeList[viewingPlanet]) +" ")+ (descriptionList[viewingPlanet]));
+    setText("planetDescription", ((typeList[viewingPlanet]) + " ") + (descriptionList[viewingPlanet]));
   } else {
-    setText("planetDescription", (descriptionList[viewingPlanet] +" ")+ (typeList[viewingPlanet]));
+    setText("planetDescription", (descriptionList[viewingPlanet] + " ") + (typeList[viewingPlanet]));
   }
   if (factsList[viewingPlanet] == "No Facts") {
     setText("factsArea", "");
@@ -410,7 +410,7 @@ function declareLists() {
   }
 }
 //Searches for planets in the planet search screen by checking to see if rows match the criteria the person inputs
-onEvent("searchButton", "click", function( ) {
+onEvent("searchButton", "click", function () {
   setProperty("searchOutputPlanet", "text", "");
   setProperty("searchOutputDiscoverer", "text", "");
   for (i = 0; i < idList.length; i++) {
@@ -421,44 +421,44 @@ onEvent("searchButton", "click", function( ) {
   }
 });
 //Random stuff
-onEvent("viewNumberButton", "click", function( ) {
+onEvent("viewNumberButton", "click", function () {
   if (idList.length >= getNumber("viewNumberInput") && getNumber("viewNumberInput") > 0) {
     currentPlanet = getNumber("viewNumberInput") - 1;
     updateViewer(currentPlanet);
     setScreen("PlanetViewer");
   }
 });
-timedLoop(125, function() {
+timedLoop(125, function () {
   setImageURL("randomGlyphScreenButton", Glyphs[randomNumber(0, 15)]);
 });
-onEvent("nextButton", "click", function( ) {
+onEvent("nextButton", "click", function () {
   nextPlanet();
 });
-onEvent("nextButton2", "click", function( ) {
+onEvent("nextButton2", "click", function () {
   nextPlanet();
 });
-onEvent("previousButton", "click", function( ) {
+onEvent("previousButton", "click", function () {
   prevPlanet();
 });
-onEvent("previousButton2", "click", function( ) {
+onEvent("previousButton2", "click", function () {
   prevPlanet();
 });
-onEvent("randomGlyphScreenButton", "click", function( ) {
+onEvent("randomGlyphScreenButton", "click", function () {
   setScreen("RandomGlyphs");
 });
-onEvent("randomGlyphBackButton", "click", function( ) {
+onEvent("randomGlyphBackButton", "click", function () {
   setScreen("HomeScreen");
 });
-onEvent("helpButton", "click", function( ) {
+onEvent("helpButton", "click", function () {
   setScreen("HelpScreen");
 });
-onEvent("helpExitButton", "click", function( ) {
+onEvent("helpExitButton", "click", function () {
   setScreen("HomeScreen");
 });
-onEvent("glyphGeneratorButton", "click", function( ) {
+onEvent("glyphGeneratorButton", "click", function () {
   randomGlyphs();
 });
-onEvent("helpPrevButton", "click", function( ) {
+onEvent("helpPrevButton", "click", function () {
   if (helpImageStatus == 0) {
     helpImageStatus = AppHelpImages.length - 1;
   } else {
@@ -466,7 +466,7 @@ onEvent("helpPrevButton", "click", function( ) {
   }
   setImageURL("helpImage", AppHelpImages[helpImageStatus]);
 });
-onEvent("helpNextButton", "click", function( ) {
+onEvent("helpNextButton", "click", function () {
   if (helpImageStatus == AppHelpImages.length - 1) {
     helpImageStatus = 0;
   } else {
@@ -512,48 +512,48 @@ function keyInput(event) {
     setScreen("HomeScreen");
   }
 }
-onEvent("RandomGlyphs", "keyup", function() {
-	randomGlyphs();
+onEvent("RandomGlyphs", "keyup", function () {
+  randomGlyphs();
 });
-onEvent("LoadingScreen", "keyup", function(event) {
-	keyInput(event);
+onEvent("LoadingScreen", "keyup", function (event) {
+  keyInput(event);
 });
-onEvent("PlanetViewer", "keyup", function(event) {
-	keyInput(event);
+onEvent("PlanetViewer", "keyup", function (event) {
+  keyInput(event);
 });
-onEvent("PlanetInfo", "keyup", function(event) {
-	keyInput(event);
+onEvent("PlanetInfo", "keyup", function (event) {
+  keyInput(event);
 });
-onEvent("PlanetInputter", "keyup", function(event) {
-	setImageURL("imageInputPreview", getText("imageInput"));
-	keyInput(event);
+onEvent("PlanetInputter", "keyup", function (event) {
+  setImageURL("imageInputPreview", getText("imageInput"));
+  keyInput(event);
 });
-onEvent("SearchScreen", "keyup", function(event) {
-	keyInput(event);
+onEvent("SearchScreen", "keyup", function (event) {
+  keyInput(event);
 });
-onEvent("HomeScreen", "keyup", function(event) {
-	keyInput(event);
+onEvent("HomeScreen", "keyup", function (event) {
+  keyInput(event);
 });
-onEvent("ATLAS", "click", function( ) {
-	setScreen("AppInfoScreen");
+onEvent("ATLAS", "click", function () {
+  setScreen("AppInfoScreen");
 });
-onEvent("ATLAS2", "click", function( ) {
-	setScreen("HomeScreen");
+onEvent("ATLAS2", "click", function () {
+  setScreen("HomeScreen");
 });
-onEvent("nameHelpScreenBackButton", "click", function( ) {
-	setScreen("PlanetInputter");
-});
-onEvent("nameHelpButton", "click", function( ) {
-	setScreen("NameInputHelpScreen");
-});
-onEvent("imageInputHelpButton", "click", function( ) {
-  setScreen("ImageHelp");
-});
-onEvent("imageHelpScreenBackButton", "click", function( ) {
+onEvent("nameHelpScreenBackButton", "click", function () {
   setScreen("PlanetInputter");
 });
-onEvent("WikiLink", "click", function( ) {
-	open("https://nomanssky.fandom.com/wiki/No_Man%27s_Sky_Wiki");
+onEvent("nameHelpButton", "click", function () {
+  setScreen("NameInputHelpScreen");
+});
+onEvent("imageInputHelpButton", "click", function () {
+  setScreen("ImageHelp");
+});
+onEvent("imageHelpScreenBackButton", "click", function () {
+  setScreen("PlanetInputter");
+});
+onEvent("WikiLink", "click", function () {
+  open("https://nomanssky.fandom.com/wiki/No_Man%27s_Sky_Wiki");
 });
 declareLists();
 updateViewer(currentPlanet);
